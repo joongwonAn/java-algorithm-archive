@@ -9,22 +9,22 @@ class Solution {
 
         int answer = 0;
         while (!queue.isEmpty()) {
-            int[] front = queue.poll();
+            int[] process = queue.poll();
 
             // Queue에 더 높은 우선순위가 있는지 확인
             boolean hasHigher = false;
             for (int[] q : queue) {
-                if (q[1] > front[1]) {
+                if (q[1] > process[1]) {
                     hasHigher = true;
                     break;
                 }
             }
 
             if (hasHigher) {
-                queue.offer(front);  // 다시 뒤로
+                queue.offer(process);  // 다시 뒤로
             } else {
                 answer++;
-                if (front[0] == location) {
+                if (process[0] == location) {
                     return answer;
                 }
             }
