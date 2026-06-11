@@ -9,10 +9,19 @@ class Solution {
             return ba.compareTo(ab);
         });
 
-        String answer = "";
+//        String answer = "";
+//        for (Integer num : nums) {
+//            answer += "" + num;
+//        }
+
+        /*
+         * 문자열을 반복적으로 이어붙일 때 SpringBuilder를 사용하는 것 추천
+         * */
+        StringBuilder sb = new StringBuilder();
         for (Integer num : nums) {
-            answer += "" + num;
+            sb.append(num);
         }
+        String answer = sb.toString();
 
         if (answer.startsWith("0")) {
             answer = "0";
